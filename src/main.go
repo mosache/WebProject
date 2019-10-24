@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	api "WebProject/src/api/account"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	fmt.Println("a")
+	app := gin.Default()
+
+	app.GET("/login", api.Login)
+
+	app.Run()
 }
